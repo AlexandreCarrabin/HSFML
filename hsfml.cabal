@@ -26,12 +26,12 @@ Data-files:
 
 
 Flag examples
-    Default: True
+    Default: False
     Description:
         Use this when you want to build the examples
 
 Flag haddock-hack
-    Default: True
+    Default: False
     Description:
         Hack to get Haddock documentation, by disabling executables.
 
