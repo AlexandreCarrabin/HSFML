@@ -1,0 +1,316 @@
+Name:         hsfml
+Version:      0.0.1
+Synopsis:     Haskell bindings to the SFML project
+Description:  
+    HSFML is a Haskell bindings to the SFML project.  
+    You can look on the SFML website : http://www.sfml-dev.org for more informations about SFML.
+--License:      zlib/png
+License-file: LICENSE
+Author:       Alexandre Carrabin
+Maintainer:   alexandre.carrabin@gmail.com
+Category:     Game
+Build-type:   Simple
+
+Cabal-version:       >=1.8
+
+Extra-source-files:
+      test/TestSuite.hs
+    , test/SFML/Graphics/Color/Tests.hs
+    , test/SFML/Graphics/Rect/Tests.hs
+    , test/SFML/System/Time/Tests.hs
+
+
+Data-files:
+    resources/sfml.png
+    resources/sansation.ttf
+
+
+Flag examples
+    Default: True
+    Description:
+        Use this when you want to build the examples
+
+Flag haddock-hack
+    Default: True
+    Description:
+        Hack to get Haddock documentation, by disabling executables.
+
+
+Library
+    Hs-source-dirs: src
+
+    Exposed-modules:     
+        SFML.Utility.Foreign
+
+        -- SFML.System
+
+        SFML.System.Internal.Types
+        SFML.System.Internal.Time
+        SFML.System.Internal.Clock
+        SFML.System.Internal.InputStream
+        SFML.System.Internal.Mutex
+        SFML.System.Internal.Sleep
+        SFML.System.Internal.Thread
+        SFML.System.Internal.Vector2
+        SFML.System.Internal.Vector3
+
+        SFML.System.Clock
+        SFML.System.InputStream
+        SFML.System.Mutex
+        SFML.System.Sleep
+        SFML.System.Thread
+        SFML.System.Time
+        SFML.System.Vector
+
+
+        -- SFML.Window
+
+        SFML.Window.Internal.Types
+        SFML.Window.Internal.Joystick
+        SFML.Window.Internal.Keyboard
+        SFML.Window.Internal.Mouse
+        SFML.Window.Internal.Event
+        SFML.Window.Internal.Context
+        SFML.Window.Internal.VideoMode
+        SFML.Window.Internal.WindowHandle
+        SFML.Window.Internal.Window
+
+        SFML.Window.Context
+        SFML.Window.Event
+        SFML.Window.Joystick
+        SFML.Window.Keyboard
+        SFML.Window.Mouse
+        SFML.Window.VideoMode
+        SFML.Window.Window
+        SFML.Window.WindowHandle
+        SFML.Window.WindowLike
+
+
+        -- SFML.Graphics
+
+        SFML.Graphics.Internal.Types
+        SFML.Graphics.Internal.BlendMode
+        SFML.Graphics.Internal.Color
+        SFML.Graphics.Internal.Rect
+        SFML.Graphics.Internal.Image
+        SFML.Graphics.Internal.Texture
+        SFML.Graphics.Internal.Transform
+        SFML.Graphics.Internal.Transformable
+        SFML.Graphics.Internal.View
+        SFML.Graphics.Internal.Glyph
+        SFML.Graphics.Internal.Font
+        SFML.Graphics.Internal.Text
+        SFML.Graphics.Internal.Shader
+        SFML.Graphics.Internal.Circle
+        SFML.Graphics.Internal.Convex
+        SFML.Graphics.Internal.Rectangle
+        SFML.Graphics.Internal.Shape
+        SFML.Graphics.Internal.PrimitiveType
+        SFML.Graphics.Internal.RenderStates
+        SFML.Graphics.Internal.Sprite
+        SFML.Graphics.Internal.Vertex
+        SFML.Graphics.Internal.VertexArray
+        SFML.Graphics.Internal.RenderTexture
+        SFML.Graphics.Internal.RenderWindow
+
+        SFML.Graphics.BlendMode
+        SFML.Graphics.Circle
+        SFML.Graphics.Color
+        SFML.Graphics.Convex
+        SFML.Graphics.Drawable
+        SFML.Graphics.Font
+        SFML.Graphics.Glyph
+        SFML.Graphics.Image
+        SFML.Graphics.PrimitiveType
+        SFML.Graphics.Rect
+        SFML.Graphics.Rectangle
+        SFML.Graphics.RenderStates
+        SFML.Graphics.RenderTexture
+        SFML.Graphics.RenderWindow
+        SFML.Graphics.Shader
+        SFML.Graphics.Shape
+        SFML.Graphics.ShapeLike
+        SFML.Graphics.Sprite
+        SFML.Graphics.Text
+        SFML.Graphics.Texture
+        SFML.Graphics.Transform
+        SFML.Graphics.Transformable
+        SFML.Graphics.TransformableLike
+        SFML.Graphics.Vertex
+        SFML.Graphics.VertexArray
+        SFML.Graphics.View
+
+
+    -- Modules not exported by this package.
+    Other-modules:       
+
+    -- The C source files to compile, in that order
+    C-sources:
+        cbits/SFML/System/ClockWrapper.c
+        cbits/SFML/System/InputStreamWrapper.c
+        cbits/SFML/System/SleepWrapper.c
+        cbits/SFML/System/TimeWrapper.c
+
+        cbits/SFML/Window/MouseWrapper.c
+        cbits/SFML/Window/VideoModeWrapper.c
+        cbits/SFML/Window/WindowWrapper.c
+
+        cbits/SFML/Graphics/CircleShapeWrapper.c
+        cbits/SFML/Graphics/ColorWrapper.c
+        cbits/SFML/Graphics/ConvexShapeWrapper.c
+        cbits/SFML/Graphics/FontWrapper.c
+        cbits/SFML/Graphics/GlyphWrapper.c
+        cbits/SFML/Graphics/ImageWrapper.c
+        cbits/SFML/Graphics/RectangleShapeWrapper.c
+        cbits/SFML/Graphics/RenderStatesWrapper.c
+        cbits/SFML/Graphics/RenderTextureWrapper.c
+        cbits/SFML/Graphics/RenderWindowWrapper.c
+        cbits/SFML/Graphics/ShaderWrapper.c
+        cbits/SFML/Graphics/ShapeWrapper.c
+        cbits/SFML/Graphics/SpriteWrapper.c
+        cbits/SFML/Graphics/TextWrapper.c
+        cbits/SFML/Graphics/TextureWrapper.c
+        cbits/SFML/Graphics/TransformWrapper.c
+        cbits/SFML/Graphics/TransformableWrapper.c
+        cbits/SFML/Graphics/VertexArrayWrapper.c
+        cbits/SFML/Graphics/VertexWrapper.c
+        cbits/SFML/Graphics/ViewWrapper.c
+
+    -- The header files to be included
+    Includes:
+        SFML/System/ClockWrapper.h
+        SFML/System/InputStreamWrapper.h
+        SFML/System/InputStream_stub.h
+        SFML/System/SleepWrapper.h
+        SFML/System/TimeWrapper.h
+
+        SFML/Window/MouseWrapper.h
+        SFML/Window/VideoModeWrapper.h
+        SFML/Window/WindowWrapper.h
+
+        SFML/Graphics/CircleShapeWrapper.h
+        SFML/Graphics/ColorWrapper.h
+        SFML/Graphics/ConvexShapeWrapper.h
+        SFML/Graphics/FontWrapper.h
+        SFML/Graphics/GlyphWrapper.h
+        SFML/Graphics/ImageWrapper.h
+        SFML/Graphics/RectangleShapeWrapper.h
+        SFML/Graphics/RenderStatesWrapper.h
+        SFML/Graphics/RenderTextureWrapper.h
+        SFML/Graphics/RenderWindowWrapper.h
+        SFML/Graphics/ShaderWrapper.h
+        SFML/Graphics/ShapeWrapper.h
+        SFML/Graphics/Shape_stub.h
+        SFML/Graphics/SpriteWrapper.h
+        SFML/Graphics/TextWrapper.h
+        SFML/Graphics/TextureWrapper.h
+        SFML/Graphics/TransformWrapper.h
+        SFML/Graphics/TransformableWrapper.h
+        SFML/Graphics/VertexArrayWrapper.h
+        SFML/Graphics/VertexWrapper.h
+        SFML/Graphics/ViewWrapper.h
+
+  
+    Include-dirs:
+        include
+
+    Extra-libraries:
+        csfml-system
+        , csfml-window
+        , csfml-graphics
+
+    Build-depends:       
+        base >= 4.2 && < 5.0
+        , bytestring >= 0.9 && < 1.0
+
+    Build-tools: c2hs
+  
+    GHC-options: -Wall -O2
+
+
+Test-Suite test-hsfml
+    Type:           exitcode-stdio-1.0
+    Hs-source-dirs: src, test
+    Main-is:        TestSuite.hs
+    build-depends:  base >= 4.2 && < 5.0
+                  , QuickCheck >= 2.4 && < 2.5
+                  , test-framework >= 0.5 && < 0.7
+                  , test-framework-quickcheck2 >= 0.2.10 && < 0.3
+                  , hsfml
+
+    GHC-options:    -Wall -O2
+
+
+Executable drag
+    if flag(examples) && !flag(haddock-hack)
+        Buildable: True
+    else
+        Buildable: False
+
+    Hs-source-dirs: examples
+    Main-is: Drag.hs
+
+    GHC-options: -Wall -O2
+
+    if !flag(haddock-hack)
+        Build-depends: 
+            base >= 4.2 && < 5.0
+            , bytestring >= 0.9 && < 1.0
+            , mtl >= 2.0 && < 2.2
+            , hsfml
+
+Executable pong
+    if flag(examples) && !flag(haddock-hack)
+        Buildable: True
+    else
+        Buildable: False
+
+    Hs-source-dirs: examples
+    Main-is: Pong.hs
+
+    GHC-options: -Wall -O2
+
+    if !flag(haddock-hack)
+        Build-depends: 
+            base >= 4.2 && < 5.0
+            , bytestring >= 0.9 && < 1.0
+            , mtl >= 2.0 && <= 2.2
+            , random >= 1.0 && < 1.1
+            , hsfml
+
+Executable hsfml-gtk
+    if flag(examples) && !flag(haddock-hack)
+        Buildable: True
+    else
+        Buildable: False
+
+    Hs-source-dirs: examples
+    Main-is: Hsfml-Gtk.hs
+
+    GHC-options: -Wall -O2
+
+    if !flag(haddock-hack)
+        Build-depends: 
+            base >= 4.2 && < 5.0
+            , bytestring >= 0.9 && < 1.0
+            , gtk >= 0.12 && < 0.13
+            , hsfml
+
+Executable frp
+    if flag(examples) && !flag(haddock-hack)
+        Buildable: True
+    else
+        Buildable: False
+
+    Hs-source-dirs: examples
+    Main-is: FRP.hs
+
+    GHC-options: -Wall -O2
+
+    if !flag(haddock-hack)
+        Build-depends: 
+            base >= 4.2 && < 5.0
+            , bytestring >= 0.9 && < 1.0
+            , reactive-banana >= 0.6 && < 0.7
+            , hsfml
+
