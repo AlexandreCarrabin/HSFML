@@ -141,6 +141,28 @@ Library
         SFML.Graphics.View
 
 
+        -- SFML.Audio
+
+        SFML.Audio.Internal.Types
+        SFML.Audio.Internal.Listener
+        SFML.Audio.Internal.SoundStatus
+        SFML.Audio.Internal.SoundStream
+        SFML.Audio.Internal.Music
+        SFML.Audio.Internal.SoundBuffer
+        SFML.Audio.Internal.Sound
+        SFML.Audio.Internal.SoundBufferRecorder
+        SFML.Audio.Internal.SoundRecorder
+
+        SFML.Audio.Listener
+        SFML.Audio.Music
+        SFML.Audio.Sound
+        SFML.Audio.SoundBuffer
+        SFML.Audio.SoundBufferRecorder
+        SFML.Audio.SoundRecorder
+        SFML.Audio.SoundStatus
+        SFML.Audio.SoundStream
+
+
     -- Modules not exported by this package.
     Other-modules:       
 
@@ -176,6 +198,13 @@ Library
         cbits/SFML/Graphics/VertexWrapper.c
         cbits/SFML/Graphics/ViewWrapper.c
 
+        cbits/SFML/Audio/ListenerWrapper.c
+        cbits/SFML/Audio/MusicWrapper.c
+        cbits/SFML/Audio/SoundWrapper.c
+        cbits/SFML/Audio/SoundBufferWrapper.c
+        cbits/SFML/Audio/SoundRecorderWrapper.c
+        cbits/SFML/Audio/SoundStreamWrapper.c
+
     -- The header files to be included
     Includes:
         SFML/System/ClockWrapper.h
@@ -210,6 +239,15 @@ Library
         SFML/Graphics/VertexWrapper.h
         SFML/Graphics/ViewWrapper.h
 
+        SFML/Audio/ListenerWrapper.h
+        SFML/Audio/MusicWrapper.h
+        SFML/Audio/SoundWrapper.h
+        SFML/Audio/SoundBufferWrapper.h
+        SFML/Audio/SoundRecorderWrapper.h
+        SFML/Audio/SoundRecorder_stub.h
+        SFML/Audio/SoundStreamWrapper.h
+        SFML/Audio/SoundStream_stub.h
+
   
     Include-dirs:
         include
@@ -218,6 +256,7 @@ Library
         csfml-system
         , csfml-window
         , csfml-graphics
+        , csfml-audio
 
     Build-depends:       
         base >= 4.2 && < 5.0
